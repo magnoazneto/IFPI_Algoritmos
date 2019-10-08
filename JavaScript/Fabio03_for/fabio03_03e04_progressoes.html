@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Progressões</title>
+</head>
+<body>
+    <div>
+        A0: <input type="text" id="A0"/></br>
+        Razão: <input type="text" id="razao"/></br>
+        Limite: <input type="text" id="limite"/></br>
+        <button id="pa" onclick="progressao_aritmetica()">Progressão Aritmética</button>
+        <button id="pg" onclick="progressao_geometrica()">Progressão Geométrica</button>
+    </div>
+    <div id="res"></div>
+    <script>
+        var getA0 = document.querySelector('div #A0')
+        var getRazao = document.querySelector('div #razao')
+        var getLimite = document.querySelector('div #limite')
+        var res = document.querySelector('#res')        
+
+        function progressao_aritmetica(A0, razao, limite){
+            var A0 = Number(getA0.value)
+            var razao = Number(getRazao.value)
+            var limite = Number(getLimite.value)
+            if (limite > A0){
+                if(razao <= 0){
+                    alert('Razão inválida para os termos digitados!')
+                    return 0
+                }
+                res.innerHTML = 'PA:'
+                for(i=A0; i<=limite; i+=razao){
+                    res.innerHTML += ` ${i}`
+                }
+            }
+            else{
+                if(razao >= 0){
+                    alert('Razão inválida para os termos digitados!')
+                    return 0
+                }
+                res.innerHTML = 'PA:'
+                for(i=A0; i>=limite; i+=razao){
+                    res.innerHTML += ` ${i}`
+                }
+            }
+        }
+
+        function progressao_geometrica(A0, razao, limite){
+            var A0 = Number(getA0.value)
+            var razao = Number(getRazao.value)
+            var limite = Number(getLimite.value)
+            if (razao <= 0){
+                alert('Razão inválida para progressão geométrica.')
+                return 0
+            }
+            if (A0 >= limite){
+                alert('Termos inválidos.')
+                return 0
+            }
+            res.innerHTML = 'PG:'
+            for(i=A0; i<=limite; i*=razao){
+                res.innerHTML += ` ${i}`
+            }  
+        }
+    </script>
+    
+</body>
+</html>

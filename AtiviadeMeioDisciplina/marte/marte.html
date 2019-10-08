@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(93, 93, 145);
+            color: white;
+            font: normal 15pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" name="mensagem"/>
+        <button class="botao" id="verifica">Verificar</button>
+    </div>
+    <script>
+        function main(){
+          //  var mensagem = prompt('Mensagem: ')
+            var msgElement = document.querySelector('input[name=mensagem]')
+            var btnVerify = document.querySelector('#verifica')
+            btnVerify.onclick = function(){
+                var mensagem = msgElement.value
+                console.log(identify_mars(mensagem))
+            }
+            
+        }
+        // código retornando valor difente da função em python3
+        function identify_mars(string){
+            var mars_msg = 'HELP'
+            var tamanho = mars_msg.length
+            var i = 0, def_index = 0, infected_msgs = 0
+            while (i < string.length){
+                if(string[i] === mars_msg[i]){
+                    def_index += 1
+                    i += 1
+                    if (def_index === 4){
+                        def_index = 0
+                    } 
+                } 
+                else {
+                    infected_msgs += 1
+                    i += tamanho - def_index
+                    def_index = 0
+                }
+            }
+            return infected_msgs
+        }
+
+        main()
+        
+       // console.log(tamanho)    
+        
+    </script>
+</body>
+</html>

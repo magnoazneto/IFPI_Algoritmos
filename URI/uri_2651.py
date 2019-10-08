@@ -1,0 +1,1 @@
+print('Link Bolado' if 'zelda' in input().lower() else 'Link Tranquilo')

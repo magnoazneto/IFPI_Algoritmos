@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fabio03_02_Sequencia_de_pares</title>
+    <style>
+        body{
+            background-color: rgb(49, 49, 131);
+            color: white;
+            font: normal 15pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Nesse script, você digitará um número, e eu vou mostrar
+        todos os números pares entre 1 e esse <strong>número:</strong></br>
+        <input type="text" id="entrada"/></br>
+        <button id="impression" onclick="printSequence()">Obter sequência</button>
+    </div>
+    <div id="res"></div>
+    <script>
+        var get_parada = document.querySelector('div #entrada')
+        var res = document.querySelector('#res')
+        function printSequence(){
+            var parada = Number(get_parada.value)
+            res.innerHTML = 'Sequência de pares:'
+            for (var i = 1; i <= parada; i++){
+                if (i % 2 === 0){
+                    res.innerHTML += ` ${i}`
+                }
+            }
+        }
+    </script>
+    
+</body>
+</html>

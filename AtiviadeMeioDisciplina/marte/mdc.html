@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculadora de MDC</title>
+    <style>
+        body{
+            background-color: rgb(93, 93, 145);
+            color: white;
+            font: normal 15pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" name="num1"/>
+        <input type="text" name="num2"/>
+        <button class="botao" name="mdc">Calcular MDC</button>
+    </div>
+    <script>
+        function main(){
+            var get_num1 = document.querySelector('input[name=num1]')
+            var get_num2 = document.querySelector('input[name=num2]')
+            var btn_mdc = document.querySelector('button[name=mdc]')
+            btn_mdc.onclick = function(){
+               var num1 = Number(get_num1.value)
+               var num2 = Number(get_num2.value)
+               alert(calcula_mdc(num1, num2))
+           }
+        }
+
+        function calcula_mdc(num1, num2){
+            var resto = 1
+            while (resto){
+                resto = num1 % num2
+                num1 = num2
+                num2 = resto
+            }
+            return num1
+        }
+       
+        main()
+        
+       // console.log(tamanho)    
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(93, 93, 145);
+            color: white;
+            font: normal 15pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    </div>
+    <script>
+        function main(){
+            var teste = prompt("Numero: ")
+            alert(eh_primo(Number(teste)))
+        }
+       
+        function eh_primo(numero){
+            var i = 2
+            var qtd_multiplos = 2
+            while (i < (numero)**(1/2)){
+                if(numero % i === 0){
+                    return false
+                }
+                i += 1
+            }
+            return true
+        }
+
+        main()
+        
+       // console.log(tamanho)    
+        
+    </script>
+</body>
+</html>

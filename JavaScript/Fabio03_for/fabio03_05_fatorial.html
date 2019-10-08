@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fatorial</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="numero"/>
+        <button id="fatorial">Calcular Fatorial</button>
+        <div id="res"></div>
+    </div>
+    <script>
+        function main(){
+            var get_valor = document.querySelector('div #numero')
+            var btnFatorial = document.querySelector('div #fatorial')
+            var res = document.querySelector('div #res')
+            btnFatorial.onclick = function(){
+                var valor = Number(get_valor.value)
+                res.innerHTML = `Fatorial de ${valor}: ${calcula_fatorial(valor)}`
+            }
+        }
+
+        function calcula_fatorial(valor){
+            var acumulado = 1
+            for(i = valor; i > 0; i --){
+                acumulado *= i
+            }
+            return acumulado
+        }
+        main()
+    </script>
+</body>
+</html>

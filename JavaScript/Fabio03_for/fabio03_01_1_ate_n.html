@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Digite um número para calcular a sequência de 1 até o número: </h1>
+    <input type="text" id="entrada"/>
+    <button id="impression" onclick="print_sequence()">Obter sequência</button>
+    <div id="res"></div>
+    <script>
+        var get_parada = document.querySelector('#entrada')
+        var res = document.querySelector('#res')
+        function print_sequence(){   
+            res.innerText = 'Sequência: '
+            var parada = Number(get_parada.value)
+            for (var i = 1; i <= parada; i++){
+                res.innerText += ` ${i}`
+            }
+        }
+    </script>
+</body>
+</html>
